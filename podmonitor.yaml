@@ -1,0 +1,13 @@
+apiVersion: monitoring.googleapis.com/v1
+kind: PodMonitoring
+metadata:
+  name: prom-example
+  labels:
+    app.kubernetes.io/name: prom-example
+spec:
+  selector:
+    matchLabels:
+      app: hello
+  endpoints:
+  - port: 8080
+    interval: 30s
